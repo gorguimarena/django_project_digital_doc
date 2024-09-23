@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demande</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2rem;
+        }
+        div {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2rem;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="mb-3">
+    {% if document.document_type == 'acte_naissance' %}
+
+    <h5>{{ demande.id }}</h5>
+    <h5>{{ demande.document_type }}</h5>
+    <h5>{{ demande.date_demande }}</h5>
+    <h5>{{ demande.nom_pere }}</h5>
+    <h5>{{ demande.prenom_pere }}</h5>
+
+    {% else %}
+
+    <h5>{{ demande.id }}</h5>
+    <h5>{{ demande.document_type }}</h5>
+    <h5>{{ demande.date_demande }}</h5>
+    <h5>{{ demande.nom_epoux }}</h5>
+    <h5>{{ demande.prenom_epoux }}</h5>
+
+    {% endif %}
+
+</div>
+</body>
+</html>
